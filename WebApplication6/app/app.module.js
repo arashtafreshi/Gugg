@@ -10,15 +10,18 @@ const core_1 = require("@angular/core");
 const platform_browser_1 = require("@angular/platform-browser");
 const forms_1 = require("@angular/forms");
 const app_component_1 = require("./app.component");
+const highlight_directive_1 = require("./highlight.directive");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
         imports: [
-            platform_browser_1.BrowserModule, forms_1.FormsModule
+            platform_browser_1.BrowserModule,
+            forms_1.FormsModule
         ],
         declarations: [
-            app_component_1.AppComponent
+            app_component_1.AppComponent,
+            highlight_directive_1.HighlightDirective
         ],
         bootstrap: [
             app_component_1.AppComponent

@@ -11,21 +11,37 @@
     "@angular/platform-browser-dynamic": "latest",
     "@angular/router": "latest",
     "@angular/upgrade": "latest",
+    "angular": "^1.6.6",
+    "angular-in-memory-web-api": "^0.4.1",
+    "angular-mocks": "^1.6.6",
     "bootstrap": "latest",
     "core-js": "latest",
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-jasmine": "^1.1.0",
     "reflect-metadata": "latest",
     "rxjs": "latest",
     "systemjs": "latest",
-    "angular-in-memory-web-api": "latest",
-    "zone.js": "latest"
+    "zone.js": "latest",
+    "grunt": "^1.0.1"
   },
   "devDependencies": {
     "@types/core-js": "latest",
+    "@types/jasmine": "latest",
     "@types/node": "latest",
+    "grunt-karma": "^2.0.0",
     "gulp": "latest",
     "gulp-tsc": "latest",
     "gulp-typescript": "latest",
+    "jasmine": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-requirejs": "^1.1.0",
     "rimraf": "latest",
-    "typescript": "latest"
+    "typescript": "latest",
+    "requirejs": "^2.3.5"
+  },
+  "scripts": {
+    "test": "karma start"
   }
 }

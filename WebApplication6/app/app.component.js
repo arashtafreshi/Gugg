@@ -18,37 +18,13 @@ let AppComponent = class AppComponent {
     constructor() {
         this.meteredFare = new metered_fare_1.MeteredFare;
         this.name = 'Angular';
-        //passengers: number = 0;
-        //date: Date = new Date(Date.now());
-        //hours:number[] = [];
-        //minutes: number[] = [];
-        //minute: number = 0;
-        //hour: number = 0;
-        //am_pm = 'AM';
-        //dateend: Date = new Date(Date.now());
-        //hoursend: number[] = [];
-        //minutesend: number[] = [];
-        //am_pmend = 'AM';
-        //minuteend: number = 0;
-        //hourend: number = 0;
-        //above6mph: number = 0;
-        //below6mph: number = 0;
-        //duration: number = 1;
+        this.customName = 'aram';
         this.fare = 0;
         this.initMeteredFare();
-        //for (var i = 1; i <= 59; i++) {
-        //    this.minutes.push(i);
-        //    this.minutesend.push(i);
-        //}
-        //for (var i = 1; i <= 12; i++) {
-        //    this.hours.push(i);
-        //    this.hoursend.push(i);
-        //}
     }
     initMeteredFare() {
         this.meteredFare.milesBelow6mph = 0;
         this.meteredFare.minutesAbove6mph = 0;
-        this.meteredFare.passengers = 0;
         this.meteredFare.startDate = new Date(Date.now());
         this.meteredFare.nyTaxPerRide = NyTaxPerRide;
         this.meteredFare.entry = Entry;
@@ -56,7 +32,6 @@ let AppComponent = class AppComponent {
     }
     getFare() {
         this.fare = 0;
-        //this.duration = 1;
         //upon entry
         this.fare += this.meteredFare.entry;
         //NY tax
@@ -67,17 +42,9 @@ let AppComponent = class AppComponent {
         this.fare += (0.35 * this.meteredFare.milesBelow6mph);
         //Peak
         this.fare = this.isPeak() ? (this.fare + this.meteredFare.peakSurcharge) : this.fare;
+        // #passengers
         return this.fare;
     }
-    //getDuration(): number {
-    //    if (this.date != null && this.dateend != null) {
-    //        var e = new Date(this.dateend).getTime();
-    //        var s = new Date(this.date).getTime();
-    //        return (e-s)/ (1000 * 60);
-    //    } else {
-    //        return -1;
-    //    }
-    //}
     isPeak() {
         if (this.isWeekday()) {
             var selectedDate = new Date(this.meteredFare.startDate);

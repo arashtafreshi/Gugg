@@ -1,65 +1,12 @@
-﻿<div class="row">
-    <div class="col-md-5">
-        <h4>Details:</h4>
-        <h5>Hello {{name}}</h5>
-        <h5>Passengers: {{meteredFare.passengers}}</h5>
-        <h5>Date: {{meteredFare.startDate}}</h5>
-        <h5><!--Start Time: {{hour}}:{{minute}}  {{am_pm}}--></h5>
-        <!--<h5>End Time: {{hourend}}:{{minuteend}}  {{am_pmend}}</h5>-->
-        <!--<h2>Fare: {{fare}}</h2>-->
-        <!--<h3>Duration(min): {{getDuration()}}</h3>-->
-        <h5>Weekday: {{isWeekday()?'Yes':'No'}}</h5>
-        <h5>Peak: {{isPeak()?'Yes (+ $1)':'No'}}</h5>
-        <hr />
-        <h2>Fare: ${{getFare()}}</h2>
-    </div>
+﻿
+<div class="row">
     <div class="col-md-7">
         <div class="container">
-            <div>
-                <!--<label for="inp_name" class="control-label" >Name: </label>
-                <input id="inp_name" class="form-control" [(ngModel)]="name" placeholder=""/>-->
-                <label for="inp_passengers" class="control-label">Number of passengers: </label>
-                <input id="inp_passengers" class="form-control" [(ngModel)]="meteredFare.passengers" type="number" min="0" max="4" placeholder="Number of passengers" />
-            </div>
-            <hr />
-            <!--<div>
-                <h1>Start Date and Time:</h1>
-                <div>
-                    <input id="inp_date" class="form-control" [(ngModel)]="date" placeholder="Date" type="date" />
-                    <select style="display:inline; width:80px;" class="form-control" [(ngModel)]="hour">
-                        <option [value]="i" *ngFor="let i of hours">{{i}}</option>
-                    </select>
-                    :
-                    <select style="display:inline; width:80px;" class="form-control" [(ngModel)]="minute">
-                        <option [value]="i" *ngFor="let i of minutes">{{i}}</option>
-                    </select>
-                    <select [(ngModel)]="am_pm">
-                        <option value="AM" selected>AM</option>
-                        <option value="PM">PM</option>
-                    </select>
-                </div>
-                <h1>End Date and Time:</h1>
-                <div>
-                    <input id="inp_date_end" class="form-control" [(ngModel)]="dateend" placeholder="Date End" type="date" />
-                    <select style="display:inline; width:80px;" class="form-control" [(ngModel)]="hourend">
-                        <option [value]="i" *ngFor="let i of hours">{{i}}</option>
-                    </select>
-                    :
-                    <select style="display:inline; width:80px;" class="form-control" [(ngModel)]="minuteend">
-                        <option [value]="i" *ngFor="let i of minutes">{{i}}</option>
-                    </select>
-                    <select [(ngModel)]="am_pmend">
-                        <option value="AM" selected>AM</option>
-                        <option value="PM">PM</option>
-                    </select>
-                </div>
-            </div>-->
             <div>
                 <label for="inpstart" class="control-label">Start:</label>
                 <input class="form-control" type="datetime-local" id="inpstart" name="input" [(ngModel)]="meteredFare.startDate"
                        placeholder="yyyy-MM-ddTHH:mm:ss" min="2017-01-01T00:00:00" max="2018-12-31T00:00:00" required />
             </div>
-            
             <hr />
             <div>
                 <label for="inp_above6mph" class="control-label">Minutes Above 6mph:</label>
@@ -67,8 +14,16 @@
                 <label for="inp_below6mph" class="control-label">0.2 Miles Below 6mph:</label>
                 <input id="inp_below6mph" class="form-control" [(ngModel)]="meteredFare.milesBelow6mph" placeholder="Miles below 6MPH" type="number" min="0" />
             </div>
-        
         </div>
     </div>
-
+    <div class="col-md-5">
+        <div style="box-shadow: 10px 10px 5px #888888; background-color:whitesmoke; padding:5px">
+            <h4 highlightme>Details:</h4>
+            <h5>Date: {{meteredFare.startDate}}</h5>
+            <h5>Weekday: {{isWeekday()?'Yes':'No'}}</h5>
+            <h5>Peak: {{isPeak()?'Yes (+ $1)':'No'}}</h5>
+            <hr />
+            <h2>Fare: ${{getFare()}}</h2>
+        </div>
+    </div>
 </div>
